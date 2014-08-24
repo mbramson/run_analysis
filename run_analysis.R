@@ -50,10 +50,10 @@ totaldata_mean_std <- totaldata[,append(c(1,2),grep("mean|std",features[,2])+2)]
 
 ## Write what we have so far in totaldata.csv
 
-write.csv(totaldata_mean_std, "totaldata_meanstd.csv")
+write.table(totaldata_mean_std, "totaldata_meanstd.txt",row.name=FALSE)
 
 totaldata_aggregate <- aggregate(totaldata_mean_std, list(totaldata_mean_std$subject,totaldata_mean_std$activity), mean)
 names(totaldata_aggregate)[1:2] <- c("Subject","Activity")
 totaldata_aggregate_tidy <- totaldata_aggregate[,c(1,2,5:83)]
 
-write.csv(totaldata_aggregate_tidy,"AggregateAverageData.csv")
+write.table(totaldata_aggregate_tidy,"AggregateAverageData.txt",row.name=FALSE)
