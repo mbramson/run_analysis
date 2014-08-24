@@ -1,0 +1,3 @@
+Codebook for the two output files
+
+File 1: totaldata_meanstd.txt
