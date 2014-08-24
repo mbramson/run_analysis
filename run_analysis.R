@@ -44,4 +44,6 @@ totaldata$activity[totaldata$activity == "4"] <- as.character(activitylabels[4,2
 totaldata$activity[totaldata$activity == "5"] <- as.character(activitylabels[5,2])
 totaldata$activity[totaldata$activity == "6"] <- as.character(activitylabels[6,2])
 
+## Prune down the columns to only include the first 2, and the ones that contain the string "mean" or "std"
 
+totaldata_mean_std <- totaldata[,append(c(1,2),grep("mean|std",features[,2])+2)]
